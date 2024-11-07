@@ -3,15 +3,15 @@
 
 
 
-![alt text](images\Image-1- Speech to text prompt.png) 
+![alt text](static/images/Image-1-%20Speech%20to%20text%20prompt.png) 
 
 
-![alt text](images\Recording Voice-1.png) 
+![alt text](static/images/Recording%20Voice-1.png) 
 
-![alt text](images\Recording Voice.png) 
+![alt text](static/images/Recording%20Voice.png) 
 
 
-![alt text](images\Speech to text.png) 
+![alt text](.static/images/speech to text.png) 
 
 
 
