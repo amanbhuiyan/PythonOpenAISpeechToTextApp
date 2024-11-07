@@ -1,0 +1,84 @@
+<!--  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text Transcription</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Speech to Text Transcription</h1>
+        <button id="recordBtn">Record and Transcribe</button>
+        <div id="output">
+            <h2>Transcription:</h2>
+            <p id="transcriptionText">Click "Record and Transcribe" to start.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("recordBtn").addEventListener("click", function () {
+            document.getElementById("transcriptionText").innerText = "Recording...";
+
+            // Send request to Flask server
+            fetch("/record", { method: "POST" })
+                .then(response => response.json())
+                .then(data => {
+                    // Display transcription on the HTML page
+                    console.log('----------------------')
+                    console.log(data)
+                    document.getElementById("transcriptionText").innerText = data.transcription;
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    document.getElementById("transcriptionText").innerText = "An error occurred while transcribing.";
+                });
+        });
+    </script>
+</body>
+</html>
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text Transcription</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Speech to Text Transcription</h1>
+        <p>Press the button below to record your voice and see the transcription appear instantly!</p>
+    </br>
+        <button id="recordBtn">Record and Transcribe</button>
+        <div id="output">
+            <h2>Transcription:</h2>
+            <p id="transcriptionText">Click "Record and Transcribe" to start.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("recordBtn").addEventListener("click", function () {
+            document.getElementById("transcriptionText").innerText = "Recording Voice...";
+
+            // Send request to Flask server
+            fetch("/record", { method: "POST" })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("transcriptionText").innerText = data.transcription;
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    document.getElementById("transcriptionText").innerText = "An error occurred while transcribing.";
+                });
+        });
+    </script>
+</body>
+</html>
