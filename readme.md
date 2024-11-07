@@ -11,7 +11,7 @@
 ![alt text](static/images/Recording%20Voice.png) 
 
 
-![alt text](.static/images/speech to text.png) 
+![alt text](static/images/Speech%20to%20text.png) 
 
 
 
